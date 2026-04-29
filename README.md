@@ -10,6 +10,8 @@
 
 **An end-to-end machine learning pipeline for predicting diabetes risk using patient healthcare data.**
 
+*Capstone Project 2 (DAB 422) · St. Clair College*
+
 </div>
 
 ---
@@ -203,13 +205,11 @@ cd healthcare-risk-prediction
 pip install -r requirements.txt
 ```
 
-### 3. Launch the Notebook
+### 3. Launch the Notebook & Run the Gradio App
 ```bash
 jupyter notebook Diabetes_Risk_Prediction.ipynb
 ```
-
-### 4. Launch the Gradio App
-Run the **Gradio cell** at the bottom of the notebook — the interface will open in your browser automatically, or generate a public shareable link.
+Once the notebook is open, run all cells. The **Gradio interface** will launch automatically at the bottom — opening in your browser or generating a public shareable link.
 
 ### Requirements
 ```
@@ -236,7 +236,6 @@ jupyter
 | **Jupyter Notebook** | Development environment |
 
 ---
-
 
 <div align="center">
 
