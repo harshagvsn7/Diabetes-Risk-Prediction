@@ -30,18 +30,6 @@
 
 ---
 
-- [Overview](#overview)
-- [Business Problem](#business-problem)
-- [Dataset](#dataset)
-- [Project Workflow](#project-workflow)
-- [Exploratory Data Analysis](#exploratory-data-analysis)
-- [Machine Learning Models](#machine-learning-models)
-- [Model Performance](#model-performance)
-- [Deployment](#deployment)
-- [Project Structure](#project-structure)
-- [How to Run](#how-to-run)
-- [Tech Stack](#tech-stack)
----
 
 ## 🔍 Overview
 
