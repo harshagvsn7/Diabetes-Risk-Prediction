@@ -27,7 +27,6 @@
 - [Project Structure](#-project-structure)
 - [How to Run](#-how-to-run)
 - [Tech Stack](#-tech-stack)
-- [Team](#-team)
 
 ---
 
