@@ -10,8 +10,6 @@
 
 **An end-to-end machine learning pipeline for predicting diabetes risk using patient healthcare data.**
 
-*Capstone Project 2 (DAB 422) · St. Clair College · Group 11*
-
 </div>
 
 ---
@@ -240,20 +238,6 @@ jupyter
 
 ---
 
-## 👥 Team
-
-**Group 11 — St. Clair College | DAB 422 Capstone Project 2**
-
-| Name |
-|---|
-| Ankit Asoodani |
-| Manish Asoodani |
-| Harsh Theesiya |
-| Venkata Siva Naga Sri Harsha Gunupudi |
-
-> 📘 *Instructor: Prof. Harpreet Virk*
-
----
 
 <div align="center">
 
