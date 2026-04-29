@@ -176,10 +176,7 @@ The best-performing model was deployed using **Gradio** — an open-source Pytho
 - 🌐 Shareable via public link
 
 ### Run the App:
-```bash
-python app.py
-# or inside the notebook — run the Gradio cell
-```
+Simply run the **Gradio cell** at the bottom of the Jupyter notebook — it launches the interface instantly in your browser (or generates a shareable public link).
 
 ---
 
@@ -188,11 +185,10 @@ python app.py
 ```
 healthcare-risk-prediction/
 │
-├── 📓 Diabetes_Risk_Prediction.ipynb   # Main notebook (EDA + modeling + deployment)
+├── 📓 Diabetes_Risk_Prediction.ipynb   # Main notebook (EDA + modeling + Gradio deployment)
 ├── 📄 Final_Report_Group_11.pdf        # Full project report
 ├── 📊 diabetes_dataset.csv             # Dataset (add to repo or link source)
-├── 📝 README.md                        # You are here
-└── requirements.txt                    # Python dependencies
+└── 📝 README.md                        # You are here
 ```
 
 ---
@@ -215,10 +211,8 @@ pip install -r requirements.txt
 jupyter notebook Diabetes_Risk_Prediction.ipynb
 ```
 
-### 4. Or Run the Gradio App Directly
-```bash
-python app.py
-```
+### 4. Launch the Gradio App
+Run the **Gradio cell** at the bottom of the notebook — the interface will open in your browser automatically, or generate a public shareable link.
 
 ### Requirements
 ```
