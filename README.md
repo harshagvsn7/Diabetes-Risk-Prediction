@@ -1,208 +1,270 @@
+# 🩺 Healthcare Risk Prediction Using Machine Learning
 
-# 🩺 Diabetes Risk Prediction Using Machine Learning
+<div align="center">
 
-> End to end machine learning project to predict diabetes risk using healthcare data, with deployment using Gradio.
+![Python](https://img.shields.io/badge/Python-3.8%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-1.x-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-2.x-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![Gradio](https://img.shields.io/badge/Gradio-Deployed-FF7C00?style=for-the-badge&logo=gradio&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
+
+**An end-to-end machine learning pipeline for predicting diabetes risk using patient healthcare data.**
+
+*Capstone Project 2 (DAB 422) · St. Clair College · Group 11*
+
+</div>
 
 ---
 
-## 📌 Overview
+## 📌 Table of Contents
 
-This project focuses on predicting diabetes risk using machine learning techniques applied to healthcare data.
-
-It covers the full pipeline from data preprocessing and exploratory analysis to model building, evaluation, and deployment as an interactive application.
+- [Overview](#-overview)
+- [Business Problem](#-business-problem)
+- [Dataset](#-dataset)
+- [Project Workflow](#-project-workflow)
+- [Exploratory Data Analysis](#-exploratory-data-analysis)
+- [Machine Learning Models](#-machine-learning-models)
+- [Model Performance](#-model-performance)
+- [Deployment](#-deployment)
+- [Project Structure](#-project-structure)
+- [How to Run](#-how-to-run)
+- [Tech Stack](#-tech-stack)
+- [Team](#-team)
 
 ---
 
-## 🎯 Problem Statement
+## 🔍 Overview
 
-Develop a machine learning model that predicts whether a patient is likely to have diabetes based on medical and lifestyle features such as glucose level, BMI, age, and physical activity.
+Diabetes is a chronic disease that affects millions globally and can lead to severe complications — heart disease, kidney failure, nerve damage, and vision loss — if not detected early. This project builds a **machine learning-powered prediction system** that identifies patients at risk of diabetes using medical and lifestyle data.
+
+> **Goal:** Predict whether a patient is diabetic or non-diabetic using structured healthcare data, and deploy the model through an interactive web interface.
+
+---
+
+## 💼 Business Problem
+
+Healthcare organizations struggle to proactively identify at-risk patients across large populations. Manual data analysis is:
+- ⏳ Time-consuming
+- ❌ Prone to human error
+- 📉 Inconsistent across practitioners
+
+This project proposes a **data-driven screening tool** that gives healthcare providers quick, automated risk assessments — enabling timely intervention, better resource allocation, and improved patient outcomes.
 
 ---
 
 ## 📊 Dataset
 
-* ~18,000 patient records 
+| Property | Details |
+|---|---|
+| **Records** | ~18,000 patient entries |
+| **Target Variable** | `Outcome` (1 = Diabetic, 0 = Non-Diabetic) |
+| **Task Type** | Binary Classification |
 
-* Features include:
+### Features Used
 
-  * Age
-  * Gender
-  * BMI
-  * Glucose level
-  * Blood pressure
-  * Insulin
-  * Physical activity
-  * Smoking status
-  * Sleep hours
-
-* Target variable:
-
-  * 1 → Diabetic
-  * 0 → Non Diabetic
+| Category | Features |
+|---|---|
+| **Demographics** | Age, Gender, Country |
+| **Clinical Measurements** | Glucose, Blood Pressure, BMI, Insulin, Skin Thickness, Cholesterol, HbA1c, Fasting Blood Sugar |
+| **Lifestyle Factors** | Physical Activity Level, Smoking Status, Sleep Hours, Daily Steps, Screen Time, Water Intake |
+| **Genetic** | Diabetes Pedigree Function, Pregnancies |
 
 ---
 
-## 🛠️ Tech Stack
+## 🔄 Project Workflow
 
-* Python
-* pandas, numpy
-* matplotlib, seaborn
-* scikit-learn
-* Gradio
+```
+Raw Data (CSV)
+     │
+     ▼
+Data Preprocessing
+ ├── Handle missing values
+ ├── Remove inconsistencies
+ └── Feature/target split
+     │
+     ▼
+Exploratory Data Analysis
+ ├── Distribution plots
+ ├── Age vs Diabetes status
+ └── Correlation heatmap
+     │
+     ▼
+Model Training
+ ├── Logistic Regression
+ ├── Decision Tree
+ └── Random Forest
+     │
+     ▼
+Model Evaluation
+ ├── Accuracy Score
+ ├── Confusion Matrix
+ └── Classification Report
+     │
+     ▼
+Deployment (Gradio Interface)
+```
 
 ---
 
-## 🔍 Data Preprocessing
-
-* Removed missing values
-* Cleaned inconsistent data
-* Feature and target split
-* Train test split
-
----
 ## 📈 Exploratory Data Analysis
 
-* Analyzed feature distributions
-* Identified trends and patterns
-* Used visualizations for better understanding
-* Performed correlation analysis
+Key insights discovered during EDA:
+
+- 📊 **Glucose levels** showed the strongest association with diabetic outcomes — higher values strongly correlated with positive cases
+- 🏋️ **BMI** and **age** were also among the top contributing factors
+- 🔗 **Correlation heatmap** revealed that most features had low inter-correlation, reducing multicollinearity concerns
+- 📅 Diabetes cases were relatively distributed across all age groups (18–79), with no single age group dominating
 
 ---
 
+## 🤖 Machine Learning Models
 
-## 📊 Key Insights
+### 1. Logistic Regression
+A linear baseline model using the **sigmoid function** to output diabetes probability. Best for understanding which features linearly influence outcomes.
 
-* Glucose level is the strongest predictor of diabetes 
-* BMI and age also have significant impact 
-* Both medical and lifestyle factors influence prediction
+- ✅ Highly interpretable
+- ✅ Efficient on structured tabular data
+- ⚠️ Assumes linear feature relationships
 
----
+### 2. Decision Tree
+A rule-based model that recursively splits data on features like glucose, BMI, and blood pressure using **Gini impurity** / **information gain**.
 
-## 🤖 Models Used
+- ✅ Fully interpretable (visualizable tree)
+- ✅ Captures non-linear patterns
+- ⚠️ Prone to overfitting on complex trees
 
-* Logistic Regression
-* Decision Tree
-* Random Forest
+**Top Features (Decision Tree):** Daily Steps · Fasting Blood Sugar · Cholesterol · Blood Pressure · Glucose
 
----
+### 3. Random Forest
+An ensemble of many decision trees, each trained on random data/feature subsets. Final prediction via **majority voting**.
 
-## 📊 Model Performance
+- ✅ Reduces overfitting
+- ✅ Captures complex feature interactions
+- ✅ Provides robust feature importance scores
 
-| Model               | Accuracy |
-| ------------------- | -------- |
-| Logistic Regression | 0.716    |
-| Decision Tree       | 0.587    |
-| Random Forest       | 0.715    |
-
-(Logistic Regression performed best, closely followed by Random Forest) 
-
----
-
-## 📉 Feature Importance
-
-Random Forest shows:
-
-* Diabetes pedigree function
-* Glucose
-* Cholesterol
-* Daily steps
-
-as top contributing features (see report page 13).
+**Top Features (Random Forest):** Diabetes Pedigree Function · Glucose · Cholesterol · Daily Steps · Fasting Blood Sugar · Insulin
 
 ---
 
-## 🌐 Deployment
+## 🏆 Model Performance
 
-The model is deployed using **Gradio**.
+| Model | Accuracy |
+|---|---|
+| 🥇 **Logistic Regression** | **71.6%** |
+| 🥈 **Random Forest** | **71.5%** |
+| 🥉 Decision Tree | 58.7% |
 
-* Users input patient details
-* Model predicts diabetes risk instantly
-* Works as an interactive interface
+```
+Logistic Regression  ████████████████████████████░░░░░░░░░░░░  71.6%
+Random Forest        ████████████████████████████░░░░░░░░░░░░  71.5%
+Decision Tree        ████████████████████████░░░░░░░░░░░░░░░░  58.7%
+```
 
-<img width="900" height="435" alt="image" src="https://github.com/user-attachments/assets/ffd29b23-cb9a-4e92-a448-fd6cee19612b" />
-
+> **Logistic Regression** and **Random Forest** significantly outperform the Decision Tree, with very similar accuracy to each other. The Decision Tree's lower score likely reflects overfitting to the training set.
 
 ---
 
-## 🔗 Live Demo
+## 🚀 Deployment
 
-For demo just run the notebook, then it in the end it shows the link as https:://1270.xxxx.xxxx something like this and click on the link it popups to browser directly.
-Do the rest of part like to predict or check them by putting the inputs.
+The best-performing model was deployed using **Gradio** — an open-source Python library for building quick ML demos.
+
+### Features of the App:
+- 🖥️ Interactive web UI — no coding required
+- 🔢 Input sliders for all key health indicators (glucose, BMI, age, blood pressure, etc.)
+- ⚡ Instant prediction: **Diabetic** or **Not Diabetic** with probability
+- 📋 Prediction history table for reviewing past inputs
+- 🌐 Shareable via public link
+
+### Run the App:
+```bash
+python app.py
+# or inside the notebook — run the Gradio cell
+```
+
+---
+
+## 📁 Project Structure
+
+```
+healthcare-risk-prediction/
+│
+├── 📓 Diabetes_Risk_Prediction.ipynb   # Main notebook (EDA + modeling + deployment)
+├── 📄 Final_Report_Group_11.pdf        # Full project report
+├── 📊 diabetes_dataset.csv             # Dataset (add to repo or link source)
+├── 📝 README.md                        # You are here
+└── requirements.txt                    # Python dependencies
+```
 
 ---
 
 ## ⚙️ How to Run
 
+### 1. Clone the Repository
 ```bash
-# Clone repository
 git clone https://github.com/your-username/healthcare-risk-prediction.git
-
 cd healthcare-risk-prediction
+```
 
-# Install dependencies
-pip install pandas numpy matplotlib seaborn scikit-learn gradio
+### 2. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
 
-# Run notebook
-jupyter notebook "Capstone 2 Final.ipynb"
+### 3. Launch the Notebook
+```bash
+jupyter notebook Diabetes_Risk_Prediction.ipynb
+```
 
-# Run app
+### 4. Or Run the Gradio App Directly
+```bash
 python app.py
 ```
 
----
-
-## 📂 Project Structure
-
-```plaintext
-healthcare-risk-prediction/
-│── Capstone 2 Final.ipynb
-│── app.py
-│── dataset.csv
-│── README.md
-│── LICENSE
+### Requirements
+```
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+gradio
+jupyter
 ```
 
 ---
 
-## 🚀 Project Status
+## 🛠️ Tech Stack
 
-* Completed data preprocessing
-* Performed EDA with visual insights
-* Built and compared ML models
-* Achieved ~71% accuracy
-* Deployed using Gradio
-
----
-
-## 🔮 Possible Extensions
-
-* Improve UI design
-* Add input validation
-* Use larger datasets
-* Improve model performance
+| Tool | Purpose |
+|---|---|
+| **Python 3.8+** | Core programming language |
+| **Pandas / NumPy** | Data manipulation |
+| **Matplotlib / Seaborn** | Data visualization |
+| **Scikit-Learn** | ML model training & evaluation |
+| **Gradio** | Model deployment & UI |
+| **Jupyter Notebook** | Development environment |
 
 ---
 
-## 📄 License
+## 👥 Team
 
-MIT License
+**Group 11 — St. Clair College | DAB 422 Capstone Project 2**
 
-Copyright (c) 2026 Your Name
+| Name |
+|---|
+| Ankit Asoodani |
+| Manish Asoodani |
+| Harsh Theesiya |
+| Venkata Siva Naga Sri Harsha Gunupudi |
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files to deal in the Software
-without restriction, including without limitation the rights to use, copy,
-modify, merge, publish, distribute, sublicense, and or sell copies of the Software.
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
-
+> 📘 *Instructor: Prof. Harpreet Virk*
 
 ---
 
-## ⭐ Support
+<div align="center">
 
-Give it a star if you found it useful.
+**⭐ If you found this project helpful, please give it a star!**
 
+*Made with ❤️ for healthcare innovation through data science*
+
+</div>
