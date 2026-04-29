@@ -33,7 +33,7 @@
 
 ## 🔍 Overview
 
-Diabetes is a chronic disease that affects millions globally and can lead to severe complications — heart disease, kidney failure, nerve damage, and vision loss — if not detected early. This project builds a **machine learning-powered prediction system** that identifies patients at risk of diabetes using medical and lifestyle data.
+Diabetes is a chronic disease that affects millions globally and can lead to severe complications heart disease, kidney failure, nerve damage, and vision loss if not detected early. This project builds a **machine learning-powered prediction system** that identifies patients at risk of diabetes using medical and lifestyle data.
 
 > **Goal:** Predict whether a patient is diabetic or non-diabetic using structured healthcare data, and deploy the model through an interactive web interface.
 
@@ -46,7 +46,7 @@ Healthcare organizations struggle to proactively identify at-risk patients acros
 - ❌ Prone to human error
 - 📉 Inconsistent across practitioners
 
-This project proposes a **data-driven screening tool** that gives healthcare providers quick, automated risk assessments — enabling timely intervention, better resource allocation, and improved patient outcomes.
+This project proposes a **data-driven screening tool** that gives healthcare providers quick, automated risk assessments enabling timely intervention, better resource allocation, and improved patient outcomes.
 
 ---
 
@@ -108,7 +108,7 @@ Deployment (Gradio Interface)
 
 Key insights discovered during EDA:
 
-- 📊 **Glucose levels** showed the strongest association with diabetic outcomes — higher values strongly correlated with positive cases
+- 📊 **Glucose levels** showed the strongest association with diabetic outcomes higher values strongly correlated with positive cases
 - 🏋️ **BMI** and **age** were also among the top contributing factors
 - 🔗 **Correlation heatmap** revealed that most features had low inter-correlation, reducing multicollinearity concerns
 - 📅 Diabetes cases were relatively distributed across all age groups (18–79), with no single age group dominating
