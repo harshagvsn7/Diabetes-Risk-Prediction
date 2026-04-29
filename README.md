@@ -10,8 +10,6 @@
 
 **An end-to-end machine learning pipeline for predicting diabetes risk using patient healthcare data.**
 
-*Capstone Project 2 (DAB 422) · St. Clair College*
-
 </div>
 
 ---
@@ -30,6 +28,19 @@
 - [How to Run](#-how-to-run)
 - [Tech Stack](#-tech-stack)
 
+---
+
+- [Overview](#overview)
+- [Business Problem](#business-problem)
+- [Dataset](#dataset)
+- [Project Workflow](#project-workflow)
+- [Exploratory Data Analysis](#exploratory-data-analysis)
+- [Machine Learning Models](#machine-learning-models)
+- [Model Performance](#model-performance)
+- [Deployment](#deployment)
+- [Project Structure](#project-structure)
+- [How to Run](#how-to-run)
+- [Tech Stack](#tech-stack)
 ---
 
 ## 🔍 Overview
