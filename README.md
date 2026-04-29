@@ -185,7 +185,8 @@ healthcare-risk-prediction/
 │
 ├── 📓 Diabetes_Risk_Prediction.ipynb   # Main notebook (EDA + modeling + Gradio deployment)
 ├── 📄 Final_Report_Group_11.pdf        # Full project report
-├── 📊 diabetes_dataset.csv             # Dataset (add to repo or link source)
+├── 📊 Healthcare.csv                   # Dataset first (add to repo or link source)
+├── 📊 Healthcare updated.csv           # Dataset second (add to repo or link source)
 └── 📝 README.md                        # You are here
 ```
 
